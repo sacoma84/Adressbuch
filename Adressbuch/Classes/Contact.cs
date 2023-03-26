@@ -8,6 +8,7 @@ namespace Adressbuch.Classes
 {
     public class Contact
     {
+        private int _id;
         private string _firstName;
         private string _lastName;
 
@@ -19,6 +20,7 @@ namespace Adressbuch.Classes
         private string _email;
         private string _phone;
 
+        public int Id { get { return _id; } set { _id = value; } }
         public string FullName { get { return _lastName + ", " + _firstName; } }
         public string FirstName { get { return _firstName; } set { _firstName = value; } }
         public string LastName { get { return _lastName; } set { _lastName = value; } }

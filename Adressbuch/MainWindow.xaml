@@ -3,16 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Adressbuch"
-        xmlns:cvm="clr-namespace:Adressbuch.ViewModels"
+        
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <!-- xmlns:local="clr-namespace:Adressbuch.ViewModels" -->
+    <!--<Window.DataContext>
+        <local:ContactViewModel />
+    </Window.DataContext>-->
     <Grid>
-
         <Grid.Resources>
             <Style TargetType="{x:Type Button}">
                 <Setter Property="Margin" Value="5" />
                 <Setter Property="Padding" Value="3"/>
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Width" Value="150"/>
             </Style>
         </Grid.Resources>
 
@@ -20,15 +26,11 @@
             <RowDefinition Height = "Auto" />
             <RowDefinition Height = "Auto" />
             <RowDefinition Height = "Auto" />
-
         </Grid.RowDefinitions>
 
         <Label Content="Kontakte" Grid.Row="0" FontFamily="BlackArial" FontWeight="Bold" FontSize="24"/>
         
         <Grid x:Name="gdKundenKontakt" Margin="5" Grid.Row="1">
-
-
-
         <Grid.RowDefinitions>
             <RowDefinition Height = "Auto" />
             <RowDefinition Height = "Auto" />
@@ -44,12 +46,11 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width = "Auto" />
-            <ColumnDefinition Width = "300" />
+            <ColumnDefinition Width = "Auto" />
+            <ColumnDefinition Width = "Auto" />
         </Grid.ColumnDefinitions>
 
         <!-- 1. Spalte - START -->
-        
-
         <Label x:Name="lblVorname" Content="Vorname:" Grid.Column="0" Grid.Row="1"/>
         <Label x:Name="lblNachname"  Content="Nachname:" Grid.Column="0" Grid.Row="2"/>
         <Label x:Name="lblStrasse" Content="Straße:" Grid.Column="0" Grid.Row="3"/>
@@ -63,8 +64,13 @@
         <TextBox x:Name="tbxVorname" Text="" Grid.Column="1" Grid.Row="1" />
         <TextBox x:Name="tbxNachname"  Text="" Grid.Column="1" Grid.Row="2" />
         <TextBox x:Name="tbxStrasse" Text="" Grid.Column="1" Grid.Row="3"/>
-        <TextBox x:Name="tbxPlzOrt" Text="" Grid.Column="1" Grid.Row="4"/>
-        <TextBox x:Name="tbxLand" Text="" Grid.Column="1" Grid.Row="5"/>
+        
+            <WrapPanel Grid.Row="4" Grid.Column="1">
+                <TextBox x:Name="tbxPlz" Text="" Width="50" />
+                <TextBox x:Name="tbxOrt" Text="" />
+                
+            </WrapPanel>
+        <TextBox x:Name="tbxLand" Text="" Grid.Row="5" Grid.Column="1" />
         <TextBox x:Name="tbxTelefon" Text="" Grid.Column="1" Grid.Row="6"/>
         <TextBox x:Name="tbxEmail" Text="" Grid.Column="1" Grid.Row="7"/>
         <TextBox x:Name="tbxGeburtsdatum" Text="" Grid.Column="1" Grid.Row="8"/>
@@ -72,13 +78,24 @@
 
         <!-- letzte Zeile - START -->
         <WrapPanel Grid.Row="9" Grid.ColumnSpan="2">
-            <Button x:Name="btnPrevious" Content="Vorheriges" />
-            <Button x:Name="btnNext" Content="Nächstes" />
-            <Button x:Name="btnPreviewPrint" Content="Druckvorschau" />
+            <Button x:Name="btnPrevious" Content="Vorheriges" Click="BtnPrevious_Click"/>
+            <Button x:Name="btnNext" Content="Nächstes" Click="BtnNext_Click" />
+            <Button x:Name="btnPreviewPrint" Content="Druckvorschau" Click="BtnPreviewPrint_Click" />
             <Button x:Name="btnCloseProgram" Content="schließen" Click="BtnCloseProgram_Click"/>
         </WrapPanel>
         <!-- letzte Zeile - ENDE -->
     </Grid>
-        <DataGrid x:Name="dgNamensliste" Grid.Row="2" ></DataGrid>
+        <!-- ItemsSource="{Binding ContactList}" -->
+        <DataGrid x:Name="dgAdressliste" Grid.Row="2"  AutoGenerateColumns="False" SelectionChanged="DgAdressliste_SelectionChanged">
+            <!-- ItemsSource="{Binding Source={StaticResource <x:Key-Wert einer Window.Resource> }}" -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id-Nr.x" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Vorname.x" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="Nachname.x" Binding="{Binding LastName}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        
+       
     </Grid>
 </Window>
