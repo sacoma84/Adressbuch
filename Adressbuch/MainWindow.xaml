@@ -87,15 +87,15 @@
     </Grid>
         <!-- ItemsSource="{Binding ContactList}" -->
         <!-- AutoGenerateColumns="False" -->
-        <DataGrid x:Name="dgAdressliste" Grid.Row="2" ItemsSource="{Binding ContactList}"  SelectionChanged="DgAdressliste_SelectionChanged">
+        <DataGrid x:Name="dgAdressliste" Grid.Row="2" ItemsSource="{Binding ContactList}" AutoGenerateColumns="False" SelectionChanged="DgAdressliste_SelectionChanged">
             
             <!-- ItemsSource="{Binding Source={StaticResource <x:Key-Wert einer Window.Resource> }}" -->
-            <!--<DataGrid.Columns>
+            <DataGrid.Columns>
                 <DataGridTextColumn Header="Id-Nr.x" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Vorname.x" Binding="{Binding FirstName}"/>
                 <DataGridTextColumn Header="Nachname.x" Binding="{Binding LastName}"/>
 
-            </DataGrid.Columns>-->
+            </DataGrid.Columns>
         </DataGrid>
         
        
