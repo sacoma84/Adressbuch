@@ -3,13 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        
+        xmlns:local="clr-namespace:Adressbuch.ViewModels" 
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <!-- xmlns:local="clr-namespace:Adressbuch.ViewModels" -->
-    <!--<Window.DataContext>
+
+    <Window.DataContext>
         <local:ContactViewModel />
-    </Window.DataContext>-->
+    </Window.DataContext>
     <Grid>
         <Grid.Resources>
             <Style TargetType="{x:Type Button}">
@@ -86,14 +86,16 @@
         <!-- letzte Zeile - ENDE -->
     </Grid>
         <!-- ItemsSource="{Binding ContactList}" -->
-        <DataGrid x:Name="dgAdressliste" Grid.Row="2"  AutoGenerateColumns="False" SelectionChanged="DgAdressliste_SelectionChanged">
+        <!-- AutoGenerateColumns="False" -->
+        <DataGrid x:Name="dgAdressliste" Grid.Row="2" ItemsSource="{Binding ContactList}"  SelectionChanged="DgAdressliste_SelectionChanged">
+            
             <!-- ItemsSource="{Binding Source={StaticResource <x:Key-Wert einer Window.Resource> }}" -->
-            <DataGrid.Columns>
+            <!--<DataGrid.Columns>
                 <DataGridTextColumn Header="Id-Nr.x" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Vorname.x" Binding="{Binding FirstName}"/>
                 <DataGridTextColumn Header="Nachname.x" Binding="{Binding LastName}"/>
 
-            </DataGrid.Columns>
+            </DataGrid.Columns>-->
         </DataGrid>
         
        
