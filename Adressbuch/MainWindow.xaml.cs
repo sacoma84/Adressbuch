@@ -24,6 +24,7 @@ namespace Adressbuch
     public partial class MainWindow : Window
     {
         ContactViewModel contactViewModel;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -46,6 +47,7 @@ namespace Adressbuch
             var selectedItem = dgAdressliste.SelectedItem; // ?
             var selectedValue = dgAdressliste.SelectedValue; // ?
             var dsRow = dgAdressliste.CurrentCell;
+            Trace.WriteLine("dsRow: " + dsRow);
             //dgAdressliste.Columns.
             // string userID = (string)(((DataRowView)(DataGrid.SelectedItem)).Row[1]);
             var ds = contactViewModel.ContactList.ToArray();
@@ -77,12 +79,24 @@ namespace Adressbuch
 
         private void BtnPrevious_Click(object sender, RoutedEventArgs e)
         {
-
+            int lastIndex = dgAdressliste.SelectedIndex; // Index-Zahl des DataGrid-Array
+            
+            if (lastIndex > 0)
+            {
+                lastIndex--;
+                dgAdressliste.SelectedIndex = lastIndex;
+            }
         }
 
         private void BtnNext_Click(object sender, RoutedEventArgs e)
         {
-
+            int lastIndex = dgAdressliste.SelectedIndex; // Index-Zahl des DataGrid-Array
+            Trace.WriteLine("dgAdressliste.AlternationCount: " + dgAdressliste.AlternationCount);
+            if (lastIndex < contactViewModel.ContactList.Count()-1)
+            {
+                lastIndex++;
+                dgAdressliste.SelectedIndex = lastIndex;
+            }
         }
     }
 }
