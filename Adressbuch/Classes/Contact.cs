@@ -34,7 +34,7 @@ namespace Adressbuch.Classes
             }
         }
 
-        public String Street
+        public string Street
         {
             get { return _street; }
             set
