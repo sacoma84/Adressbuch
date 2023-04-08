@@ -60,7 +60,7 @@ namespace Adressbuch
                 tbxLand.Text = ds[lastIndex].Country;
                 tbxTelefon.Text = ds[lastIndex].Phone;
                 tbxEmail.Text = ds[lastIndex].Email;
-
+                tbxGeburtsdatum.Text = ds[lastIndex].Birthday.ToString();
                 Trace.WriteLine(ds[lastIndex].Id + " | " + ds[lastIndex].FullName);
             }
         

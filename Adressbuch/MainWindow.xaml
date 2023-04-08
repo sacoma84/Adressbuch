@@ -86,16 +86,13 @@
         <!-- letzte Zeile - ENDE -->
     </Grid>
         <!-- ItemsSource="{Binding ContactList}" -->
-        <DataGrid x:Name="dgAdressliste" Grid.Row="2"  AutoGenerateColumns="False" SelectionChanged="DgAdressliste_SelectionChanged">
+        <DataGrid x:Name="dgAdressliste" Grid.Row="2" ScrollViewer.VerticalScrollBarVisibility="Auto"  AutoGenerateColumns="False" SelectionChanged="DgAdressliste_SelectionChanged">
             <!-- ItemsSource="{Binding Source={StaticResource <x:Key-Wert einer Window.Resource> }}" -->
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id-Nr.x" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Vorname.x" Binding="{Binding FirstName}"/>
                 <DataGridTextColumn Header="Nachname.x" Binding="{Binding LastName}"/>
-
             </DataGrid.Columns>
         </DataGrid>
-        
-       
     </Grid>
 </Window>
