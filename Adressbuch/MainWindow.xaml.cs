@@ -109,8 +109,6 @@ namespace Adressbuch
             //    tbxGeburtsdatum.Text = ds[lastIndex].Birthday.ToString();
             //    Trace.WriteLine(ds[lastIndex].Id + " | " + ds[lastIndex].FullName);
             //}
-        
-
             
             //string selectItem = dgAdressliste.;
             //MessageBox.Show(selectItem);            
