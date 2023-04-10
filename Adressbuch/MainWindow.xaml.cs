@@ -96,19 +96,19 @@ namespace Adressbuch
             //    Trace.WriteLine(ds[lastIndex].Id + " | " + ds[lastIndex].FullName);
             //}
 
-            if (lastIndex < ds.Count())
-            {
-                tbxVorname.Text = ds[lastIndex].FirstName;
-                tbxNachname.Text = ds[lastIndex].LastName;
-                tbxStrasse.Text = ds[lastIndex].Street;
-                tbxPlz.Text = ds[lastIndex].PostalCode;
-                tbxOrt.Text = ds[lastIndex].City;
-                tbxLand.Text = ds[lastIndex].Country;
-                tbxTelefon.Text = ds[lastIndex].Phone;
-                tbxEmail.Text = ds[lastIndex].Email;
-                tbxGeburtsdatum.Text = ds[lastIndex].Birthday.ToString();
-                Trace.WriteLine(ds[lastIndex].Id + " | " + ds[lastIndex].FullName);
-            }
+            //if (lastIndex < ds.Count())
+            //{
+            //    tbxVorname.Text = ds[lastIndex].FirstName;
+            //    tbxNachname.Text = ds[lastIndex].LastName;
+            //    tbxStrasse.Text = ds[lastIndex].Street;
+            //    tbxPlz.Text = ds[lastIndex].PostalCode;
+            //    tbxOrt.Text = ds[lastIndex].City;
+            //    tbxLand.Text = ds[lastIndex].Country;
+            //    tbxTelefon.Text = ds[lastIndex].Phone;
+            //    tbxEmail.Text = ds[lastIndex].Email;
+            //    tbxGeburtsdatum.Text = ds[lastIndex].Birthday.ToString();
+            //    Trace.WriteLine(ds[lastIndex].Id + " | " + ds[lastIndex].FullName);
+            //}
         
 
             

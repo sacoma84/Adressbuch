@@ -68,12 +68,11 @@
             <WrapPanel Grid.Row="4" Grid.Column="1">
                 <TextBox x:Name="tbxPlz" Text="{Binding SelectedItem.PostalCode, ElementName=dgAdressliste}" Width="50" />
                 <TextBox x:Name="tbxOrt" Text="{Binding SelectedItem.City, ElementName=dgAdressliste}" />
-                
             </WrapPanel>
             <TextBox x:Name="tbxLand" Text="{Binding SelectedItem.Country, ElementName=dgAdressliste}" Grid.Row="5" Grid.Column="1" />
             <TextBox x:Name="tbxTelefon" Text="{Binding SelectedItem.Phone, ElementName=dgAdressliste}" Grid.Column="1" Grid.Row="6"/>
             <TextBox x:Name="tbxEmail" Text="{Binding SelectedItem.Email, ElementName=dgAdressliste}" Grid.Column="1" Grid.Row="7"/>
-            <TextBox x:Name="tbxGeburtsdatum" Text="{Binding SelectedItem.Birthday, ElementName=dgAdressliste}" Grid.Column="1" Grid.Row="8"/>
+            <TextBox x:Name="tbxGeburtsdatum" Text="{Binding SelectedItem.Birthday, ElementName=dgAdressliste}"  Grid.Column="1" Grid.Row="8"/>
         <!-- 2. Spalte - ENDE -->
 
         <!-- letzte Zeile - START -->
