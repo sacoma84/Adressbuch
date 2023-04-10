@@ -25,7 +25,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height = "Auto" />
             <RowDefinition Height = "Auto" />
-            <RowDefinition Height = "Auto" />
+            <RowDefinition Height = "*" />
         </Grid.RowDefinitions>
 
         <Label Content="Kontakte" Grid.Row="0" FontFamily="BlackArial" FontWeight="Bold" FontSize="24"/>
@@ -61,19 +61,19 @@
         <Label x:Name="lblGeburtsdatum" Content="Geburtsdatum:" Grid.Column="0" Grid.Row="8"/>
         <!-- 1. Spalte - ENDE -->
         <!-- 2. Spalte - START -->
-        <TextBox x:Name="tbxVorname" Text="" Grid.Column="1" Grid.Row="1" />
-        <TextBox x:Name="tbxNachname"  Text="" Grid.Column="1" Grid.Row="2" />
-        <TextBox x:Name="tbxStrasse" Text="" Grid.Column="1" Grid.Row="3"/>
+            <TextBox x:Name="tbxVorname" Text="{Binding SelectedItem.FirstName, ElementName=dgAdressliste}" Grid.Column="1" Grid.Row="1" />
+            <TextBox x:Name="tbxNachname"  Text="{Binding SelectedItem.LastName, ElementName=dgAdressliste}" Grid.Column="1" Grid.Row="2" />
+            <TextBox x:Name="tbxStrasse" Text="{Binding SelectedItem.Street, ElementName=dgAdressliste}" Grid.Column="1" Grid.Row="3"/>
         
             <WrapPanel Grid.Row="4" Grid.Column="1">
-                <TextBox x:Name="tbxPlz" Text="" Width="50" />
-                <TextBox x:Name="tbxOrt" Text="" />
+                <TextBox x:Name="tbxPlz" Text="{Binding SelectedItem.PostalCode, ElementName=dgAdressliste}" Width="50" />
+                <TextBox x:Name="tbxOrt" Text="{Binding SelectedItem.City, ElementName=dgAdressliste}" />
                 
             </WrapPanel>
-        <TextBox x:Name="tbxLand" Text="" Grid.Row="5" Grid.Column="1" />
-        <TextBox x:Name="tbxTelefon" Text="" Grid.Column="1" Grid.Row="6"/>
-        <TextBox x:Name="tbxEmail" Text="" Grid.Column="1" Grid.Row="7"/>
-        <TextBox x:Name="tbxGeburtsdatum" Text="" Grid.Column="1" Grid.Row="8"/>
+            <TextBox x:Name="tbxLand" Text="{Binding SelectedItem.Country, ElementName=dgAdressliste}" Grid.Row="5" Grid.Column="1" />
+            <TextBox x:Name="tbxTelefon" Text="{Binding SelectedItem.Phone, ElementName=dgAdressliste}" Grid.Column="1" Grid.Row="6"/>
+            <TextBox x:Name="tbxEmail" Text="{Binding SelectedItem.Email, ElementName=dgAdressliste}" Grid.Column="1" Grid.Row="7"/>
+            <TextBox x:Name="tbxGeburtsdatum" Text="{Binding SelectedItem.Birthday, ElementName=dgAdressliste}" Grid.Column="1" Grid.Row="8"/>
         <!-- 2. Spalte - ENDE -->
 
         <!-- letzte Zeile - START -->
@@ -86,18 +86,13 @@
         <!-- letzte Zeile - ENDE -->
     </Grid>
         <!-- ItemsSource="{Binding ContactList}" -->
-        <!-- AutoGenerateColumns="False" -->
-        <DataGrid x:Name="dgAdressliste" Grid.Row="2" ItemsSource="{Binding ContactList}" AutoGenerateColumns="False" SelectionChanged="DgAdressliste_SelectionChanged">
-            
+        <DataGrid x:Name="dgAdressliste" ItemsSource="{Binding ContactList}" Grid.Row="2" CanUserAddRows="False" ScrollViewer.VerticalScrollBarVisibility="Visible"  AutoGenerateColumns="False" SelectionChanged="DgAdressliste_SelectionChanged">
             <!-- ItemsSource="{Binding Source={StaticResource <x:Key-Wert einer Window.Resource> }}" -->
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id-Nr.x" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Vorname.x" Binding="{Binding FirstName}"/>
                 <DataGridTextColumn Header="Nachname.x" Binding="{Binding LastName}"/>
-
             </DataGrid.Columns>
         </DataGrid>
-        
-       
     </Grid>
 </Window>

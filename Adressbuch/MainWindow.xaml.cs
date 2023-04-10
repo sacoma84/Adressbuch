@@ -23,12 +23,13 @@ namespace Adressbuch
     /// </summary>
     public partial class MainWindow : Window
     {
-        ContactViewModel contactViewModel;
+        //ContactViewModel contactViewModel;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            contactViewModel = new ContactViewModel();
+            //contactViewModel = new ContactViewModel();
             //var dataSet = contactViewModel.ContactList;
             //dgAdressliste.ItemsSource = dataSet; // .DefaultView;
 
@@ -46,9 +47,54 @@ namespace Adressbuch
             var selectedItem = dgAdressliste.SelectedItem; // ?
             var selectedValue = dgAdressliste.SelectedValue; // ?
             var dsRow = dgAdressliste.CurrentCell;
+            Trace.WriteLine("lastIndex: " + lastIndex);
+            Trace.WriteLine("selectedValue: " + selectedValue);
+
+            Trace.WriteLine("dsRow: " + dsRow);
             //dgAdressliste.Columns.
             // string userID = (string)(((DataRowView)(DataGrid.SelectedItem)).Row[1]);
-            var ds = contactViewModel.ContactList.ToArray();
+
+            //var ds = contactViewModel.ContactList.ToArray();
+            var ds = dgAdressliste.Items[0];
+            //Trace.WriteLine("dgAdressliste.Items[lastIndex]: " + dgAdressliste.Items[lastIndex]);
+
+
+            Trace.WriteLine("xxx: ");
+            //foreach (var item in dgAdressliste.SelectedValue)
+            //{
+            //    Trace.WriteLine("item: " + item);
+            //}
+
+            // 
+            //tbxVorname.Text = dgAdressliste.SelectedItem.Firstname;
+            //tbxNachname.Text = dgAdressliste.SelectedItem.LastName;
+            //tbxStrasse.Text = dgAdressliste.SelectedItem.Street;
+            //tbxPlz.Text = dgAdressliste.SelectedItem.PostalCode;
+            //tbxOrt.Text = dgAdressliste.SelectedItem.City;
+            //tbxLand.Text = dgAdressliste.SelectedItem.Country;
+            //tbxTelefon.Text = dgAdressliste.SelectedItem.Phone;
+            //tbxEmail.Text = dgAdressliste.SelectedItem.Email;
+            //tbxGeburtsdatum.Text = dgAdressliste.SelectedItem.Birthday.ToString();
+
+            //foreach (var item in dsItems)
+            //{
+
+            //    Trace.WriteLine("item.ToString(): " + item.ToString());
+            //}
+
+            //if (lastIndex < ds.Count())
+            //{
+            //    tbxVorname.Text = ds[lastIndex].FirstName;
+            //    tbxNachname.Text = ds[lastIndex].LastName;
+            //    tbxStrasse.Text = ds[lastIndex].Street;
+            //    tbxPlz.Text = ds[lastIndex].PostalCode;
+            //    tbxOrt.Text = ds[lastIndex].City;
+            //    tbxLand.Text = ds[lastIndex].Country;
+            //    tbxTelefon.Text = ds[lastIndex].Phone;
+            //    tbxEmail.Text = ds[lastIndex].Email;
+            //    tbxGeburtsdatum.Text = ds[lastIndex].Birthday.ToString();
+            //    Trace.WriteLine(ds[lastIndex].Id + " | " + ds[lastIndex].FullName);
+            //}
 
             if (lastIndex < ds.Count())
             {
@@ -77,12 +123,26 @@ namespace Adressbuch
 
         private void BtnPrevious_Click(object sender, RoutedEventArgs e)
         {
-
+            int lastIndex = dgAdressliste.SelectedIndex; // Index-Zahl des DataGrid-Array
+            
+            if (lastIndex > 0)
+            {
+                lastIndex--;
+                dgAdressliste.SelectedIndex = lastIndex;
+            }
         }
 
         private void BtnNext_Click(object sender, RoutedEventArgs e)
         {
-
+            int lastIndex = dgAdressliste.SelectedIndex; // Index-Zahl des DataGrid-Array
+            int countDs = dgAdressliste.Items.Count;
+            Trace.WriteLine("dgAdressliste.Items.Count: " + dgAdressliste.Items.Count);
+            Trace.WriteLine("dgAdressliste.AlternationCount: " + dgAdressliste.AlternationCount);
+            if (lastIndex < dgAdressliste.Items.Count - 1)
+            {
+                lastIndex++;
+                dgAdressliste.SelectedIndex = lastIndex;
+            }
         }
     }
 }
