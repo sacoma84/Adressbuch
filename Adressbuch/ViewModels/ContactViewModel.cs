@@ -3,15 +3,25 @@ using Adressbuch.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Adressbuch.ViewModels
 {
-    public class ContactViewModel
+    public class ContactViewModel 
     {
         public ObservableCollection<Contact> ContactList { get; set; }
+        private Contact _selectedContact;
+
+
+
+        public Contact SelectedContact 
+        { 
+            get { return _selectedContact; } 
+            set { _selectedContact = value; } 
+        }
 
         public ContactViewModel()
         {

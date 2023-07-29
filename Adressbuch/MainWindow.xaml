@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Adressbuch.ViewModels" 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="400">
 
     <Window.DataContext>
         <local:ContactViewModel />
@@ -41,7 +41,7 @@
             <RowDefinition Height = "Auto" />
             <RowDefinition Height = "Auto" />
             <RowDefinition Height = "Auto" />
-                <RowDefinition Height = "Auto" />
+            <RowDefinition Height = "Auto" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -80,6 +80,7 @@
             <Button x:Name="btnPrevious" Content="Vorheriges" Click="BtnPrevious_Click"/>
             <Button x:Name="btnNext" Content="Nächstes" Click="BtnNext_Click" />
             <Button x:Name="btnPreviewPrint" Content="Druckvorschau" Click="BtnPreviewPrint_Click" />
+            <Button x:Name="btnSave" Content="speichern" />
             <Button x:Name="btnCloseProgram" Content="schließen" Click="BtnCloseProgram_Click"/>
         </WrapPanel>
         <!-- letzte Zeile - ENDE -->

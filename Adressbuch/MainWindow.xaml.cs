@@ -122,7 +122,7 @@ namespace Adressbuch
         private void BtnPrevious_Click(object sender, RoutedEventArgs e)
         {
             int lastIndex = dgAdressliste.SelectedIndex; // Index-Zahl des DataGrid-Array
-            
+
             if (lastIndex > 0)
             {
                 lastIndex--;
@@ -134,13 +134,14 @@ namespace Adressbuch
         {
             int lastIndex = dgAdressliste.SelectedIndex; // Index-Zahl des DataGrid-Array
             int countDs = dgAdressliste.Items.Count;
+            Trace.WriteLine("lastIndex: " + lastIndex);
             Trace.WriteLine("dgAdressliste.Items.Count: " + dgAdressliste.Items.Count);
             Trace.WriteLine("dgAdressliste.AlternationCount: " + dgAdressliste.AlternationCount);
-            if (lastIndex < dgAdressliste.Items.Count - 1)
-            {
+            //if (lastIndex < dgAdressliste.Items.Count - 1)
+            //{
                 lastIndex++;
                 dgAdressliste.SelectedIndex = lastIndex;
-            }
+            //}
         }
     }
 }
