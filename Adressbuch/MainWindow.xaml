@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="650" Width="800">
     <!-- xmlns:local="clr-namespace:Adressbuch.ViewModels" -->
     <!--<Window.DataContext>
         <local:ContactViewModel />
@@ -27,9 +27,7 @@
             <RowDefinition Height = "Auto" />
             <RowDefinition Height = "Auto" />
         </Grid.RowDefinitions>
-
         <Label Content="Kontakte" Grid.Row="0" FontFamily="BlackArial" FontWeight="Bold" FontSize="24"/>
-        
         <Grid x:Name="gdKundenKontakt" Margin="5" Grid.Row="1">
         <Grid.RowDefinitions>
             <RowDefinition Height = "Auto" />

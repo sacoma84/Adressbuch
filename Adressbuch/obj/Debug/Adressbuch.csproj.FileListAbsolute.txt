@@ -13,3 +13,17 @@ C:\Users\HP\source\repos\Adressbuch\Adressbuch\obj\Debug\Adressbuch.exe
 C:\Users\HP\source\repos\Adressbuch\Adressbuch\obj\Debug\Adressbuch.pdb
 C:\Users\HP\source\repos\Adressbuch\Adressbuch\obj\Debug\MainWindow.g.cs
 C:\Users\HP\source\repos\Adressbuch\Adressbuch\obj\Debug\MainWindow.baml
+C:\Projekte\Csharp\Lokale_Umgebung\Adressbuch\Adressbuch\bin\Debug\Adressbuch.exe.config
+C:\Projekte\Csharp\Lokale_Umgebung\Adressbuch\Adressbuch\bin\Debug\Adressbuch.exe
+C:\Projekte\Csharp\Lokale_Umgebung\Adressbuch\Adressbuch\bin\Debug\Adressbuch.pdb
+C:\Projekte\Csharp\Lokale_Umgebung\Adressbuch\Adressbuch\obj\Debug\Adressbuch.csproj.AssemblyReference.cache
+C:\Projekte\Csharp\Lokale_Umgebung\Adressbuch\Adressbuch\obj\Debug\MainWindow.baml
+C:\Projekte\Csharp\Lokale_Umgebung\Adressbuch\Adressbuch\obj\Debug\MainWindow.g.cs
+C:\Projekte\Csharp\Lokale_Umgebung\Adressbuch\Adressbuch\obj\Debug\App.g.cs
+C:\Projekte\Csharp\Lokale_Umgebung\Adressbuch\Adressbuch\obj\Debug\Adressbuch_MarkupCompile.cache
+C:\Projekte\Csharp\Lokale_Umgebung\Adressbuch\Adressbuch\obj\Debug\Adressbuch.g.resources
+C:\Projekte\Csharp\Lokale_Umgebung\Adressbuch\Adressbuch\obj\Debug\Adressbuch.Properties.Resources.resources
+C:\Projekte\Csharp\Lokale_Umgebung\Adressbuch\Adressbuch\obj\Debug\Adressbuch.csproj.GenerateResource.cache
+C:\Projekte\Csharp\Lokale_Umgebung\Adressbuch\Adressbuch\obj\Debug\Adressbuch.csproj.CoreCompileInputs.cache
+C:\Projekte\Csharp\Lokale_Umgebung\Adressbuch\Adressbuch\obj\Debug\Adressbuch.exe
+C:\Projekte\Csharp\Lokale_Umgebung\Adressbuch\Adressbuch\obj\Debug\Adressbuch.pdb
